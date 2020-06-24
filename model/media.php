@@ -94,9 +94,9 @@ class Media {
     $db   = init_db();
 
     $req  = $db->prepare( "SELECT * FROM media ORDER BY release_date DESC" );
-    $req->execute( array( '%' . $title . '%' ));
+    $req->execute( array($title));
 
-    // Close databse connection
+    // Close database connection
     $db   = null;
 
     return $req->fetchAll();

@@ -4,6 +4,7 @@ require_once( 'controller/homeController.php' );
 require_once( 'controller/loginController.php' );
 require_once( 'controller/signupController.php' );
 require_once( 'controller/mediaController.php' );
+require_once( 'controller/detailController.php' );
 
 /**************************
 * ----- HANDLE ACTION -----
@@ -36,12 +37,21 @@ if ( isset( $_GET['action'] ) ):
 
 else:
 
-  $user_id = isset( $_SESSION['user_id'] ) ? $_SESSION['user_id'] : false;
+    $user_id = isset( $_SESSION['user_id'] ) ? $_SESSION['user_id'] : false;
 
-  if( $user_id ):
-    mediaPage();
-  else:
-    homePage();
-  endif;
+    if( $user_id ):
+        if ( isset( $_GET['media'] ) ) {
+
+            if ($_GET['media']) {
+                detailPage( $_GET['media']);
+            }
+        }
+        else{
+            mediaPage();
+        }
+
+    else:
+        homePage();
+    endif;
 
 endif;
