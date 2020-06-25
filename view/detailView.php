@@ -34,7 +34,7 @@
 
     <div class="media-list">
         <?php foreach( $nb_seasons as $season ): ?>
-            <p>SAISON <?php print_r($season['id_season']) ?></p>
+            <h2 class="media-season">SAISON <?php print_r($season['id_season']) ?></h2>
             <?php foreach( $nb_episodes as $episode ): ?>
                 <?php if ($episode['id_season'] == $season['id_season']):?>
                     <a class="item" href="index.php?media=<?= $episode['id']; ?>">

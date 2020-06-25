@@ -2,6 +2,17 @@
 * Home page rules
 **********/
 
+.media-type {
+    font-weight: bold;
+    font-size: 120%;
+    list-style-type: none;
+    color: #e7061e;
+}
+
+.media-season {
+    font-weight: bold;
+}
+
 .media-list {
     display: flex;
     flex-wrap: wrap;

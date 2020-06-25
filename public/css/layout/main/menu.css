@@ -123,6 +123,12 @@
   font-weight: 700;
   color: #fff;
 }
+
+a.title:hover {
+  color: var(--color-red);
+  text-decoration: none;
+}
+
 #content .header .title span {
   color: var(--color-red);
 }
