@@ -40,7 +40,7 @@
                     <a class="item" href="index.php?media=<?= $episode['id']; ?>">
                         <div class="video">
                             <div>
-                                <iframe allowfullscreen="" frameborder="0" src="<?= $episode['trailer_url']; ?>" ></iframe>
+                                <iframe src="<?= $episode['trailer_url']; ?>" allow="autoplay" allowfullscreen="" frameborder="0"></iframe>
                             </div>
                         </div>
                         <div class="title"><?= $episode['episode_title']; ?></div>

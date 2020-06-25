@@ -33,6 +33,19 @@ if ( isset( $_GET['action'] ) ):
 
     break;
 
+    case 'filmpage':
+
+      filmPage();
+
+    break;
+
+    case 'seriespage':
+
+      seriesPage();
+
+    break;
+
+
   endswitch;
 
 else:

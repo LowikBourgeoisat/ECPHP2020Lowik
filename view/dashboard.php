@@ -6,7 +6,6 @@
 
     <link href="public/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link href="public/lib/font-awesome/css/all.min.css" rel="stylesheet" />
-
     <link href="public/css/partials/partials.css" rel="stylesheet" />
     <link href="public/css/layout/layout.css" rel="stylesheet" />
   </head>
@@ -29,6 +28,8 @@
       <div id="content">
         <div class="header">
           <h2 class="title">Cod<span>'Flix</span></h2>
+          <h2 class="title"><a href="index.php?action=filmpage">Films</a></h2>
+          <h2 class="title"><a href="index.php?action=seriespage">Séries</a></h2>
           <div class="toggle-menu d-block d-md-none">
             <button type="button" id="sidebarCollapse" class="btn btn-primary">
               <i class="fas fa-bars"></i>
