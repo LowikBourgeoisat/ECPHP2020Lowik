@@ -18,7 +18,10 @@
         <div class="sidebar-menu">
           <ul>
             <li class="active"><a href="/CodFlix/">Médias</a></li>
-            <li><a href="#">Nous contacter</a></li>
+            <li class="active"><a href="index.php?action=filmpage">Films</a></li>
+            <li class="active"><a href="index.php?action=seriespage">Séries</a></li>
+            <li><a href="index.php?action=history">Historique</a></li>
+            <li><a href="index.php?action=contactus">Nous contacter</a></li>
             <li><a href="index.php?action=logout">Me déconnecter</a></li>
           </ul>
         </div>
@@ -28,8 +31,7 @@
       <div id="content">
         <div class="header">
           <h2 class="title">Cod<span>'Flix</span></h2>
-          <h2 class="title"><a href="index.php?action=filmpage">Films</a></h2>
-          <h2 class="title"><a href="index.php?action=seriespage">Séries</a></h2>
+          <h2 class="title"><a class="title" href="index.php?action=profile">Profil</a></h2>
           <div class="toggle-menu d-block d-md-none">
             <button type="button" id="sidebarCollapse" class="btn btn-primary">
               <i class="fas fa-bars"></i>

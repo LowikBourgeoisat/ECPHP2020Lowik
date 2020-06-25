@@ -5,6 +5,9 @@ require_once( 'controller/loginController.php' );
 require_once( 'controller/signupController.php' );
 require_once( 'controller/mediaController.php' );
 require_once( 'controller/detailController.php' );
+require_once( 'controller/historyController.php' );
+require_once( 'controller/contactUsController.php' );
+require_once( 'controller/profileController.php' );
 
 /**************************
 * ----- HANDLE ACTION -----
@@ -45,6 +48,23 @@ if ( isset( $_GET['action'] ) ):
 
     break;
 
+    case 'history':
+
+      historyPage();
+
+    break;
+
+    case 'profile':
+
+      profilePage();
+
+    break;
+
+    case 'contactus':
+
+      contactUsPage();
+
+    break;
 
   endswitch;
 
