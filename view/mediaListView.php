@@ -13,6 +13,7 @@
     </div>
 </div>
 
+<li>Tous les programmes</li>
 <div class="media-list">
     <?php foreach( $medias as $media ): ?>
         <a class="item" href="index.php?media=<?= $media['id']; ?>">
@@ -28,6 +29,46 @@
                 echo str_replace(":", "h", $duration); ?></div>
             <div class="title"><?= date("d/m/Y", strtotime($media['release_date'])); ?></div>
         </a>
+    <?php endforeach; ?>
+</div>
+<li>Films</li>
+<div class="media-list">
+    <?php foreach( $medias as $media ): ?>
+        <?php if ( $media['type'] == 'film' ): ?>
+            <a class="item" href="index.php?media=<?= $media['id']; ?>">
+                <div class="video">
+                    <div>
+                        <iframe allowfullscreen="" frameborder="0"
+                                src="<?= $media['trailer_url']; ?>" ></iframe>
+                    </div>
+                </div>
+                <div class="title"><?= $media['title']; ?></div>
+                <div class="title"><?php
+                    $duration = gmdate("H:i", $media['duration']);
+                    echo str_replace(":", "h", $duration); ?></div>
+                <div class="title"><?= date("d/m/Y", strtotime($media['release_date'])); ?></div>
+            </a>
+        <?php endif; ?>
+    <?php endforeach; ?>
+</div>
+<li>Séries</li>
+<div class="media-list">
+    <?php foreach( $medias as $serie ): ?>
+        <?php if ( $serie['type'] == 'series' ): ?>
+            <a class="item" href="index.php?media=<?= $serie['id']; ?>">
+                <div class="video">
+                    <div>
+                        <iframe allowfullscreen="" frameborder="0"
+                                src="<?= $serie['trailer_url']; ?>" ></iframe>
+                    </div>
+                </div>
+                <div class="title"><?= $serie['title']; ?></div>
+                <div class="title"><?php
+                    $duration = gmdate("H:i", $serie['duration']);
+                    echo str_replace(":", "h", $duration); ?></div>
+                <div class="title"><?= date("d/m/Y", strtotime($serie['release_date'])); ?></div>
+            </a>
+        <?php endif; ?>
     <?php endforeach; ?>
 </div>
 
