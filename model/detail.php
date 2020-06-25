@@ -2,7 +2,7 @@
 
 require_once( 'database.php' );
 
-class Detail {
+class detail {
 
     protected $id;
     protected $genre_id;
@@ -92,7 +92,7 @@ class Detail {
     public static function detailMedia ( $title ) {
         // Open database connection
         $db = init_db();
-
+        // Get everything from table media
         $req = $db->prepare( "SELECT * FROM media WHERE id = ? ORDER BY release_date DESC");
         $req->execute(array($title));
 
@@ -105,7 +105,7 @@ class Detail {
     public static function getSeasons( $id ) {
         // Open database connection
         $db = init_db();
-
+        // Get ID from table series
         $req  = $db->prepare( "SELECT id_season FROM series WHERE id_media = ? GROUP BY id_season");
         $req->execute(array($id));
 
@@ -120,7 +120,7 @@ class Detail {
     public static function getEpisodes( $id ) {
         // Open database connection
         $db = init_db();
-
+        // Get everything from table series
         $req  = $db->prepare( "SELECT * FROM series WHERE id_media = ?");
         $req->execute(array($id));
 

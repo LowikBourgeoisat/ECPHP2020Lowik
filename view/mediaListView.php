@@ -13,7 +13,6 @@
     </div>
 </div>
 
-<li>Tous les programmes</li>
 <div class="media-list">
     <?php foreach( $medias as $media ): ?>
         <a class="item" href="index.php?media=<?= $media['id']; ?>">
@@ -31,7 +30,6 @@
         </a>
     <?php endforeach; ?>
 </div>
-<li>Films</li>
 <div class="media-list">
     <?php foreach( $medias as $media ): ?>
         <?php if ( $media['type'] == 'film' ): ?>
@@ -51,7 +49,6 @@
         <?php endif; ?>
     <?php endforeach; ?>
 </div>
-<li>Séries</li>
 <div class="media-list">
     <?php foreach( $medias as $serie ): ?>
         <?php if ( $serie['type'] == 'series' ): ?>

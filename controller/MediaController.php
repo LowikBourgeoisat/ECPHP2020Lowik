@@ -7,27 +7,27 @@ require_once( 'model/media.php' );
 ***************************/
 
 function mediaPage() {
+    // Get all medias
+    $search = isset( $_GET['title'] ) ? $_GET['title'] : null;
+    $medias = media::filterMedias( $search );
 
-  $search = isset( $_GET['title'] ) ? $_GET['title'] : null;
-  $medias = Media::filterMedias( $search );
-
-  require('view/mediaListView.php');
+    require('view/mediaListView.php');
 
 }
 
 function filmPage() {
-
+    // Get only films
     $search = isset( $_GET['title'] ) ? $_GET['title'] : null;
-    $medias = Media::filterFilm( $search );
+    $medias = media::filterFilm( $search );
 
     require('view/filteredView.php');
 
 }
 
 function seriesPage() {
-
+    // Get only series
     $search = isset( $_GET['title'] ) ? $_GET['title'] : null;
-    $medias = Media::filterSeries( $search );
+    $medias = media::filterSeries( $search );
 
     require('view/filteredView.php');
 

@@ -2,7 +2,7 @@
 
 require_once( 'database.php' );
 
-class Media {
+class media {
 
   protected $id;
   protected $genre_id;
@@ -138,5 +138,4 @@ class Media {
 
     return $req->fetchAll();
   }
-
 }

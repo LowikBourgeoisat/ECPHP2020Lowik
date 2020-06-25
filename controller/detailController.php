@@ -8,11 +8,12 @@ require_once( 'model/detail.php' );
 
 function detailPage( $id ) {
 
-    $medias = Detail::detailMedia( $id );
-
+    $medias = detail::detailMedia( $id );
+    //See if the media is a series or not and then instantiate the
+    //variables containing the episodes and the number of seasons
     if ($medias[0]['type'] == 'series'):
-        $nb_seasons = Detail::getSeasons( $id );
-        $nb_episodes = Detail::getEpisodes( $id );
+        $nb_seasons = detail::getSeasons( $id );
+        $nb_episodes = detail::getEpisodes( $id );
     endif;
 
     require('view/detailView.php');
