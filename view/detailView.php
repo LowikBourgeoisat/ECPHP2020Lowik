@@ -18,8 +18,7 @@
             <a class="item" href="index.php?media=<?= $media['id']; ?>">
                 <div class="video">
                     <div>
-                        <iframe allowfullscreen="" frameborder="0"
-                                src="<?= $media['trailer_url']; ?>" ></iframe>
+                        <iframe allowfullscreen="" frameborder="0" src="<?= $media['trailer_url']; ?>" ></iframe>
                     </div>
                 </div>
                 <div class="title"><?= $media['title']; ?></div>
@@ -29,6 +28,23 @@
                 <div class="title"><?= date("d/m/Y", strtotime($media['release_date'])); ?></div>
                 <div class="title"><?= $media['summary']; ?></div>
             </a>
+        <?php endforeach; ?>
+    </div>
+
+
+    <div class="media-list">
+        <?php foreach( $nb_seasons as $season ): ?>
+        <p>SAISON <?php print_r($season['id_season']) ?></p>
+            <?php foreach( $nb_episodes as $episode ): ?>
+                <a class="item" href="index.php?media=<?= $episode['id']; ?>">
+                    <div class="video">
+                        <div>
+                            <iframe allowfullscreen="" frameborder="0" src="<?= $episode['trailer_url']; ?>" ></iframe>
+                        </div>
+                    </div>
+                    <div class="title"><?= $episode['title']; ?></div>
+                </a>
+            <?php endforeach; ?>
         <?php endforeach; ?>
     </div>
 

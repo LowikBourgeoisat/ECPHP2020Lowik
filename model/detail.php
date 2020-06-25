@@ -20,7 +20,7 @@ class Detail {
         $this->setTitle( $media->title );
     }
 
-    /***************************
+     /***************************
      * -------- SETTERS ---------
      ***************************/
 
@@ -48,7 +48,7 @@ class Detail {
         $this->release_date = $release_date;
     }
 
-    /***************************
+     /***************************
      * -------- GETTERS ---------
      ***************************/
 
@@ -84,23 +84,52 @@ class Detail {
         return $this->trailer_url;
     }
 
-    /***************************
+     /***************************
      * -------- GET LIST --------
      ***************************/
 
 
     public static function detailMedia ( $title ) {
-
         // Open database connection
         $db = init_db();
 
-        $req = $db->prepare( "SELECT * FROM media WHERE id = ? ORDER BY release_date DESC" );
-        $req->execute( array($title));
+        $req = $db->prepare( "SELECT * FROM media WHERE id = ? ORDER BY release_date DESC");
+        $req->execute(array($title));
 
         // Close database connection
-        $db   = null;
+        $db = null;
 
         return $req->fetchAll();
+    }
+
+    public static function getSeasons( $id ) {
+        // Open database connection
+        $db = init_db();
+
+        $req  = $db->prepare( "SELECT id_season FROM series WHERE id_media = ? GROUP BY id_season");
+        $req->execute(array($id));
+
+        // Close database connection
+        $db = null;
+
+        return $req->fetchAll();
+
+
+    }
+
+    public static function getEpisodes( $id ) {
+        // Open database connection
+        $db = init_db();
+
+        $req  = $db->prepare( "SELECT * FROM series WHERE id_media = ?");
+        $req->execute(array($id));
+
+        // Close database connection
+        $db = null;
+
+        return $req->fetchAll();
+
+
     }
 
 }
