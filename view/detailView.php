@@ -44,6 +44,9 @@
                             </div>
                         </div>
                         <div class="title"><?= $episode['episode_title']; ?></div>
+                        <div class="title"><?php
+                            $duration = gmdate("H:i", $episode['duration']);
+                            echo str_replace(":", "h", $duration); ?></div>
                     </a>
                 <?php endif; ?>
             <?php endforeach; ?>
