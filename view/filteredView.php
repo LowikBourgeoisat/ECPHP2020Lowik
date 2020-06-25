@@ -23,6 +23,10 @@
                     </div>
                 </div>
                 <div class="title"><?= $media['title']; ?></div>
+                <div class="title"><?php
+                    $duration = gmdate("H:i", $media['duration']);
+                    echo str_replace(":", "h", $duration); ?></div>
+                <div class="title"><?= date("d/m/Y", strtotime($media['release_date'])); ?></div>
             </a>
         <?php endforeach; ?>
     </div>

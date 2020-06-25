@@ -103,4 +103,40 @@ class Media {
 
   }
 
+     /***************************
+     * -------- GET FILM --------
+     ***************************/
+
+  public static function filterFilm ( $title ) {
+
+    // Open database connection
+    $db   = init_db();
+    // Get everything from table media where our media type is film
+    $req  = $db->prepare( "SELECT * FROM media WHERE type = 'film' ORDER BY release_date DESC" );
+    $req->execute( array($title));
+
+    // Close database connection
+    $db   = null;
+
+    return $req->fetchAll();
+  }
+
+     /***************************
+     * -------- GET SERIES -----
+     ***************************/
+
+  public static function filterSeries ( $title ) {
+
+    // Open database connection
+    $db   = init_db();
+    // Get everything from table media where our media type is series
+    $req  = $db->prepare( "SELECT * FROM media WHERE type = 'series' ORDER BY release_date DESC" );
+    $req->execute( array($title));
+
+    // Close database connection
+    $db   = null;
+
+    return $req->fetchAll();
+  }
+
 }
